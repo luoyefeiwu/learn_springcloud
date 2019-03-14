@@ -1,6 +1,7 @@
 package com.jerry.microserviceeurekaorder.controller;
 
 import com.jerry.microserviceeurekaorder.model.Order;
+import com.jerry.microserviceeurekaorder.utils.ServiceInfoUtil;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +17,6 @@ public class OrderController {
         order.setReceiverAddress("beijing");
         order.setReceiverName("xiaoqiang");
         order.setReceiverPhone("110");
-        return order.toString();
+        return order.toString()+"端口："+ServiceInfoUtil.getPort();
     }
 }

@@ -8,10 +8,16 @@ import org.springframework.context.annotation.Configuration;
 public class ServiceInfoUtil implements ApplicationListener<WebServerInitializedEvent> {
 
     private static WebServerInitializedEvent event;
+
     @Override
     public void onApplicationEvent(WebServerInitializedEvent webServerInitializedEvent) {
-        ServiceInfoUtil.event=event;
+        this.event = webServerInitializedEvent;
     }
-    // 93页
 
+    /**获取端口
+     * @return
+     */
+    public static int getPort() {
+        return event.getWebServer().getPort();
+    }
 }
