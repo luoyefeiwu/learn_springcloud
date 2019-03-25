@@ -1,14 +1,16 @@
-package com.jerry.microserviceconfigserver;
+package com.jerry.microserviceconfigclient;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class MicroserviceConfigServerApplication {
+@RefreshScope
+public class MicroserviceConfigClientApplication {
 
     @Value("${clientParam}")
     private String clientParam;
@@ -23,7 +25,7 @@ public class MicroserviceConfigServerApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(MicroserviceConfigServerApplication.class, args);
+        SpringApplication.run(MicroserviceConfigClientApplication.class, args);
     }
 
 

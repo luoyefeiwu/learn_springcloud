@@ -1,4 +1,4 @@
-package com.jerry.microserviceconfigserver;
+package com.jerry.microserviceconfigclient;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
